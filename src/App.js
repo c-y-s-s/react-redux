@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectTodos } from "./redux/selectors";
 import { addTodo } from "./redux/actions";
-import AddTodo from "./AddTodo";
+import AddTodo from "./containers/AddTodo";
 function App() {
   // 取出 store 裡面全部的 store
   // 但通常不會取出全部的東西
@@ -17,18 +17,18 @@ function App() {
   const todos = useSelector(selectTodos);
   console.log(todos);
   // 取出 dispatch
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <div>
-      <button
+      {/* <button
         onClick={() => {
           dispatch(addTodo(Math.random()));
         }}
       >
         add todo
-      </button>
-
+      </button> */}
+      <AddTodo/>
       <ul>
         {todos.map((todo) => (
           <li>
